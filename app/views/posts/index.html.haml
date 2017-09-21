@@ -1,0 +1,10 @@
+%h1 All the posts
+
+%h2= link_to 'New Post', new_post_path
+-@posts.each do |post|
+    %h3
+    =link_to post.title , post_path(post)
+    %p
+    Published 
+    = time_ago_in_words(post.created_at) 
+    ago
